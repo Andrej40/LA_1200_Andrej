@@ -11,7 +11,7 @@ namespace Erstes_Projekt
             
             Random rnd = new Random();
             int RandomNumber = rnd.Next(1, 100);
-            int x = 1;
+            int attempts = 1;
             Console.WriteLine("I have thought of a number ranging from 1-100. Can you guess it?");
             bool correctguess = false;
             
@@ -19,7 +19,7 @@ namespace Erstes_Projekt
             while (!correctguess)
             {
             
-             x = x + 1;
+             attempts = attempts + 1;
                 
                 try
                 {
@@ -28,7 +28,7 @@ namespace Erstes_Projekt
                     {
                         throw new Exception();
                     }
-                    else if (x > 9)
+                    else if (attempts > 9)
                     {
                         Console.WriteLine("Here's a tutorial on how to git gud: ");
                         Console.WriteLine("Let's assume the random number is 37.");
@@ -48,15 +48,15 @@ namespace Erstes_Projekt
                         Console.WriteLine("That's 36 and you're told to write a bigger number.");
                         Console.WriteLine("The only possible number is 37 and you are successful. In this case, it would've only taken you 6 tries.");
                         Console.WriteLine("I hope this helps. Now try again. Your attempts have been resetted to 1.");
-                        x = 1;
+                        attempts = 1;
                     }
 
 
                     else if (RandomNumber == userGuess)
                     {
-                        x = x - 1;
+                        attempts = attempts - 1;
 
-                        Console.WriteLine("Good job! You took " + x + " attempts");
+                        Console.WriteLine("Good job! You took " + attempts + " attempts");
                         correctguess = true;
                     }
 
@@ -73,11 +73,6 @@ namespace Erstes_Projekt
 
                     }
 
-                    else
-                    {
-                        Console.WriteLine("Please write a number!");
-
-                    }
                 }
                 catch
                 {
